@@ -1,0 +1,27 @@
+.resizable-table-container {
+    overflow-x: auto;
+  }
+  
+  .resizable-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th {
+    position: relative;
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+    color: white;
+  }
+  
+  .resizer {
+    width: 8px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: col-resize;
+    background-color: transparent;
+  }
+  

@@ -1,0 +1,50 @@
+.header{
+    position: sticky;
+    top: 0;
+    height: 60px;
+    background: #383838;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+
+.logout-button {
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    min-width: 100px;
+    background: #f11313;
+    color: white;
+    cursor: pointer;
+}
+
+.profile-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 10px;
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+
+.user-detail{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+     justify-content: center;
+}
+
+.user-detail span:first-child{
+    font-weight: 600;
+}
+
+.user-detail span:last-child{
+   font-size: small;
+   text-transform: lowercase;
+}

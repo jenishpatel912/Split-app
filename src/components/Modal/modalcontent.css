@@ -1,0 +1,86 @@
+.group-modal-container{
+    margin:auto;
+    width:450px
+}
+
+.group-name-input{
+    width: 100%;
+    margin-top: 10px;
+    height: 40px;
+    padding-inline:10px;
+    font-size: large;
+}
+
+.user-box{
+        margin: 0 15px;
+        /* font-size: 20px; */
+        display: flex;
+        padding: 10px 5px;
+        gap: 15px;
+        align-items: center;
+        border-bottom: 1px solid gray;
+        cursor: pointer;
+        justify-content: space-between;
+}
+
+.user-list{
+    max-height: 300px;
+    overflow: auto;
+    text-align: left;
+     margin-bottom: 10px;
+}
+
+.user-list input[type="checkbox"]{
+    scale: 1.6;
+    border-radius: 50%;
+}
+
+.search-box{
+text-align: center;
+margin: 0 15px;
+}
+
+.search-input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #8080803b;
+}
+
+.search-input:focus{
+    border: none;
+    outline: none;
+}
+
+.user-info{
+        display: flex;
+        flex-direction: column;
+}
+
+.user-name{
+   font-weight: 500;
+}
+
+.user-email{
+   font-size: 13px;
+   opacity: 0.7;
+}
+
+.create-group-footer{
+    margin: 20px 0;
+}
+
+.create-group-footer button{
+    padding: 8px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.sub-header{
+    font-size: 17px;
+    font-weight: 600;
+    margin: 10px 0;
+}

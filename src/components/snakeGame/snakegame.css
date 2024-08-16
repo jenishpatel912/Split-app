@@ -1,0 +1,10 @@
+.stage-cotainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.stage-cotainer .konvajs-content{
+    border: 1px solid white;
+}

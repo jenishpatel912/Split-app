@@ -1,0 +1,59 @@
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 20px;
+    overflow: auto;
+    resize: both;
+    position: relative;
+  }
+
+  .resizable {
+    position: absolute;
+    right: 0;
+    width: 1px;
+    cursor: ew-resize;
+    height: 100%;
+}
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .first-column{
+    cursor: pointer;
+  }
+  tr{
+    height: auto;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+
+  .arrow{
+    font-size: large;
+    font-weight: 500;
+  }
+
+  
+  .table-row {
+      /* opacity: 0; */
+      /* display: none; */
+      height: 50px;
+      /* animation: fadeInUp 0.3s ease-in-out forwards;  */
+    }
+    
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        /* display: none; */
+        /* transform: translateY(-30px); */
+      }
+      100% {
+        opacity: 1;
+        /* height: 50px; */
+        /* transform: translateY(0); */
+      }
+    }

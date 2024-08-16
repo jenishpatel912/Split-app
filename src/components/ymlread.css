@@ -1,0 +1,100 @@
+.yml-content{
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+}
+.yml-content:focus{
+    border: 1px solid;
+    cursor: text;
+}
+.container {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.entity-container {
+    text-align: left;
+    position: relative;
+    width: 100%;
+}
+
+.select-file {
+    margin: auto;
+    width: 300px;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.select-file:hover{
+    background: lightblue;
+}
+
+.key-box {
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+.delete-button {
+    background: red;
+    border: none;
+    padding: 2px 8px;
+    color: white;
+    border-radius: 3px;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 1px;
+}
+
+.add-button {
+    background: green;
+    border: none;
+    padding: 2px 8px;
+    color: white;
+    border-radius: 3px;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 37px;
+    top: 1px;
+}
+/* .input-key:hover + .delete-button{
+  display: inline;
+} */
+/* .delete-button:hover{
+    display: inline;
+} */
+.input-key-container{
+    display: inline;
+    position: relative;
+}
+.input-key-container:hover .delete-button,
+.input-key-container:hover .add-button{
+    display: inline;
+}
+/* .entity-container:hover > .delete-button{
+    display: inline;
+}
+
+.entity-container:has(.delete-button){
+    color: red !important;
+} */
+
+button.save-button {
+    padding: 10px;
+    border: none;
+    background: green;
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    cursor: pointer;
+}
