@@ -4,6 +4,7 @@ import { handleApiCall } from "../../utility/apiCall";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
 import { useToast } from "../../contexts/ToastContext";
+import Loader from "../../components/Loader/Loader";
 
 const Login = () => {
   const { userData, setUserData } = useAuth();
@@ -35,7 +36,7 @@ const Login = () => {
     );
   };
 
-//   if(loading) return <Loader/>
+  if(loading) return <Loader/>
 
   return (
     <div className="mx-2">

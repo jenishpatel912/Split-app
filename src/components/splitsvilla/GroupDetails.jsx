@@ -9,13 +9,17 @@ import { useNavigate, useParams } from "react-router-dom";
 import CreateEntryModal from "../Modal/CreateEntryModal";
 import { useAuth } from "../../contexts/AuthContext";
 import { getDepthRecord, updateRecords } from "./calulate";
+import Loader from "../Loader/Loader";
+import AddGroupUserModal from "../Modal/AddGroupUserModal";
 
 const GroupDetails = () => {
   const [groupData, setGroupData] = useState({});
   const [isentryModal, setIsEntryModal] = useState(false);
   const [userList, setUserList] = useState([]);
+  const [isLoading,setLoading] = useState(false)
   const [records, setRecords] = useState({});
   const [currentUser, setCurrentUser] = useState(null);
+  const [isAddModal,setIsAddmodal] = useState(false);
 
   const { userData } = useAuth();
   const params = useParams();
@@ -30,7 +34,7 @@ const GroupDetails = () => {
       `group/fetch/${params.groupId}`,
       "get",
       null,
-      () => {},
+      setLoading,
       (data, err) => {
         if (err) return;
         setGroupData(data);
@@ -143,7 +147,28 @@ const GroupDetails = () => {
 
   };
 
+  const addParticipants = (newUsers) => {
+    if(!newUsers.length) return;
+    handleApiCall(
+      `group/update`,
+      "post",
+      {
+        newUsers,
+        groupId:groupInfo._id
+      },
+      setLoading,
+      (data, err) => {
+        if (err) return;
+        setIsAddmodal(!isAddModal)
+        fetchGroupDetails();
+      }
+    );
+  }
+
   console.log(records);
+
+
+  if(isLoading) return <Loader/>
 
   return (
     <div>
@@ -161,6 +186,12 @@ const GroupDetails = () => {
       <div className="text-white mx-2 header-bar">
         <h3>{groupInfo?.name}</h3>
         <div className="header-button-container">
+        <button
+            className="cursor-pointer"
+            onClick={() => setIsAddmodal(!isAddModal)}
+          >
+            Add participants
+          </button>
           <button
             className="cursor-pointer"
             onClick={() => setIsEntryModal(!isentryModal)}
@@ -253,6 +284,12 @@ const GroupDetails = () => {
           showToast={showToast}
         />
       )}
+
+      {isAddModal && <AddGroupUserModal
+          onClose={() => setIsAddmodal(!isAddModal)}
+          userList={userList}
+          handleSubmit={addParticipants}
+        />}
 
       {/* frontroll testing */}
     </div>

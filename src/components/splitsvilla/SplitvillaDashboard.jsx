@@ -6,11 +6,13 @@ import "./splitsvilla.css";
 import CreategroupModal from "../Modal/CreategroupModal";
 import { useToast } from "../../contexts/ToastContext";
 import { useNavigate } from "react-router-dom";
+import Loader from "../Loader/Loader";
 
 const SplitvillaDashboard = () => {
   const [groupList, setGroupList] = useState({});
   const [isgroupModal, setIsGroupModal] = useState(false);
   const [userList, setUserList] = useState([]);
+  const [isLoading,setLoading] = useState(false)
   const navigate = useNavigate();
 
   const showToast = useToast();
@@ -20,7 +22,7 @@ const SplitvillaDashboard = () => {
       "group/fetch",
       "get",
       null,
-      () => {},
+      setLoading,
       (data, err) => {
         if (err) return;
         setGroupList(data);
@@ -30,7 +32,7 @@ const SplitvillaDashboard = () => {
       "users/list",
       "get",
       null,
-      () => {},
+      ()=>{},
       (data, err) => {
         if (err) return;
         setUserList(data.userList || []);
@@ -63,6 +65,8 @@ const SplitvillaDashboard = () => {
   const handleGroup = (id) => {
     navigate(`/group-detail/${id}`);
   };
+
+  if(isLoading) return <Loader/>
 
   return (
     <div>
