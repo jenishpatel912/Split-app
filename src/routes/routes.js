@@ -1,3 +1,5 @@
+import LightsOut from "../components/LightsOut";
+import Slider from "../components/Slider/Slider";
 import GroupDetails from "../components/splitsvilla/GroupDetails";
 import SplitvillaDashboard from "../components/splitsvilla/SplitvillaDashboard";
 import Login from "../pages/auth/Login";
@@ -13,6 +15,16 @@ export const publicRoutes = [
         name:'Signup',
         path:'/register',
         component:Register,
+    },
+    {
+        name:'Slider',
+        path:'/slider',
+        component:Slider
+    },
+    {
+        name:'Light',
+        path:'/light',
+        component:LightsOut
     },
     {
         name:'redirection-route',
